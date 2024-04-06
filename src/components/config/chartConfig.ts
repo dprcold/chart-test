@@ -5,6 +5,8 @@ import HighchartsPatternFill from 'highcharts/modules/pattern-fill';
 
 import { CreateChartOptionsArgs, DonutChartOptions } from '../../types/types';
 
+import { backgroundColor, primaryColor, secondaryColor, subtitleColor, textColor } from './colors';
+
 HighchartsSankey(Highcharts);
 HighchartsExporting(Highcharts);
 HighchartsPatternFill(Highcharts);
@@ -50,7 +52,7 @@ export const createSankeyChart = ({
   return {
     chart: {
       type: chartType,
-      backgroundColor: '#4e4e4e',
+      backgroundColor: backgroundColor,
     },
     title: {
       text: title || '',
@@ -77,7 +79,7 @@ export const createSankeyChart = ({
           enabled: true,
           style: {
             fontSize: '20px',
-            color: '#FFFFFF',
+            color: textColor,
             textOutline: 'none',
             fontWeight: 'lighter',
           },
@@ -109,7 +111,7 @@ export const createDonutChart = ({ type, total, subtitleText, data }: DonutChart
     chart: {
       type: type,
       plotShadow: false,
-      backgroundColor: '#4e4e4e',
+      backgroundColor: backgroundColor,
     },
     title: {
       text: total.toString(),
@@ -117,7 +119,7 @@ export const createDonutChart = ({ type, total, subtitleText, data }: DonutChart
       verticalAlign: 'middle',
       y: 0,
       style: {
-        color: '#ffffff',
+        color: textColor,
         fontSize: '42px',
       },
     },
@@ -127,7 +129,7 @@ export const createDonutChart = ({ type, total, subtitleText, data }: DonutChart
       verticalAlign: 'middle',
       y: 20,
       style: {
-        color: '#b0b0b0',
+        color: subtitleColor,
         fontSize: '16px',
         textIndent: '-2px',
       },
@@ -158,16 +160,16 @@ export const createDonutChart = ({ type, total, subtitleText, data }: DonutChart
           format: '{point.percentage:.1f} %',
           style: {
             fontSize: '20px',
-            color: '#ffffff',
+            color: textColor,
             textOutline: 'none',
           },
-          connectorColor: '#ffffff',
+          connectorColor: textColor,
           connectorWidth: 3,
           connectorPadding: 10,
         },
         showInLegend: true,
         startAngle: 158.3,
-        colors: ['#77954d', '#979797'],
+        colors: [primaryColor, secondaryColor],
       },
     },
     series: [
