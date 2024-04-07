@@ -98,7 +98,7 @@ export const createSankeyChart = ({
         dataLabels: {
           nodeFormatter: function () {
             const point: any = this.point;
-            return point.name + '<br><div style="text-align: right; font-size: 20px;">' + point.sum + '%</div>';
+            return `${point.name}<br>${point.sum}%`;
           },
         },
       },
