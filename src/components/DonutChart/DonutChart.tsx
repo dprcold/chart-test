@@ -14,12 +14,16 @@ export const DonutChart: FC = () => {
     type: 'pie',
     total: mockData.total,
     subtitleText: subtitleText,
-    data: convertDataFormat(mockData.data, mockData.total),
+    data: convertDataFormat(mockData.data),
   });
 
   useEffect(() => {
     Highcharts.chart('donut-container', chartOptions);
-  }, [additionalData]);
+  }, []);
 
-  return <div id="donut-container" style={{ height: '300px' }} />;
+  return (
+    <figure>
+      <div id="donut-container" style={{ height: '300px' }} />
+    </figure>
+  );
 };

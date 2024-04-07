@@ -5,7 +5,7 @@ import HighchartsPatternFill from 'highcharts/modules/pattern-fill';
 
 import { CreateChartOptionsArgs, DonutChartOptions } from '../../types/types';
 
-import { backgroundColor, primaryColor, secondaryColor, subtitleColor, textColor } from './colors';
+import { darkGrayColor, greenColor, grayColor, lightGrayColor, whiteColor } from './colors';
 
 HighchartsSankey(Highcharts);
 HighchartsExporting(Highcharts);
@@ -52,7 +52,7 @@ export const createSankeyChart = ({
   return {
     chart: {
       type: chartType,
-      backgroundColor: backgroundColor,
+      backgroundColor: darkGrayColor,
     },
     title: {
       text: title || '',
@@ -79,7 +79,7 @@ export const createSankeyChart = ({
           enabled: true,
           style: {
             fontSize: '20px',
-            color: textColor,
+            color: whiteColor,
             textOutline: 'none',
             fontWeight: 'lighter',
           },
@@ -111,7 +111,7 @@ export const createDonutChart = ({ type, total, subtitleText, data }: DonutChart
     chart: {
       type: type,
       plotShadow: false,
-      backgroundColor: backgroundColor,
+      backgroundColor: darkGrayColor,
     },
     title: {
       text: total.toString(),
@@ -119,7 +119,7 @@ export const createDonutChart = ({ type, total, subtitleText, data }: DonutChart
       verticalAlign: 'middle',
       y: 0,
       style: {
-        color: textColor,
+        color: whiteColor,
         fontSize: '42px',
       },
     },
@@ -129,7 +129,7 @@ export const createDonutChart = ({ type, total, subtitleText, data }: DonutChart
       verticalAlign: 'middle',
       y: 20,
       style: {
-        color: subtitleColor,
+        color: lightGrayColor,
         fontSize: '16px',
         textIndent: '-2px',
       },
@@ -160,16 +160,16 @@ export const createDonutChart = ({ type, total, subtitleText, data }: DonutChart
           format: '{point.percentage:.1f} %',
           style: {
             fontSize: '20px',
-            color: textColor,
+            color: whiteColor,
             textOutline: 'none',
           },
-          connectorColor: textColor,
+          connectorColor: whiteColor,
           connectorWidth: 3,
           connectorPadding: 10,
         },
         showInLegend: true,
         startAngle: 158.3,
-        colors: [primaryColor, secondaryColor],
+        colors: [greenColor, grayColor],
       },
     },
     series: [
@@ -180,5 +180,11 @@ export const createDonutChart = ({ type, total, subtitleText, data }: DonutChart
         data: data,
       },
     ],
+    legend: {
+      itemStyle: {
+        color: whiteColor,
+        fontSize: '16px',
+      },
+    },
   };
 };
