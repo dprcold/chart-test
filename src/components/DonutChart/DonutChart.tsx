@@ -23,7 +23,13 @@ export const DonutChart: FC = () => {
 
   return (
     <figure>
-      <div id="donut-container" style={{ height: '300px' }} />
+      <div
+        id="donut-container"
+        style={{
+          height: '300px',
+          strokeDasharray: '20, 10',
+        }}
+      />
     </figure>
   );
 };

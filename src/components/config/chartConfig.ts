@@ -156,7 +156,7 @@ export const createDonutChart = ({ type, total, subtitleText, data }: DonutChart
         innerSize: '80%',
         dataLabels: {
           enabled: true,
-          distance: 20,
+          distance: 25,
           format: '{point.percentage:.1f} %',
           style: {
             fontSize: '20px',
@@ -165,7 +165,7 @@ export const createDonutChart = ({ type, total, subtitleText, data }: DonutChart
           },
           connectorColor: whiteColor,
           connectorWidth: 3,
-          connectorPadding: 10,
+          connectorPadding: 3,
         },
         showInLegend: true,
         startAngle: 158.3,
